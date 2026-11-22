@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102b46">
+  <title>ARCS'26 | Registration</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="brand">ARCS<span>'26</span></div>
+    <p class="eyebrow">1st Autumn School</p>
+    <h1>Advances in Robotic Control Systems</h1>
+    <p class="meta">23–27 November 2026 · Al Hoceima, Morocco</p>
+    <p class="intro">Join researchers, academics and students for an immersive scientific experience in robotics and control systems.</p>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>Participant registration</h2>
+      <p class="muted">Please complete the form below. Fields marked * are required.</p>
+      <form id="registration-form">
+        <div class="grid">
+          <label>First name *<input name="first_name" autocomplete="given-name" required maxlength="80"></label>
+          <label>Last name *<input name="last_name" autocomplete="family-name" required maxlength="80"></label>
+          <label>Email address *<input name="email" type="email" autocomplete="email" required maxlength="254"></label>
+          <label>Phone number<input name="phone" type="tel" autocomplete="tel" maxlength="30"></label>
+          <label>University / Institution *<input name="institution" required maxlength="180"></label>
+          <label>Country *<input name="country" required maxlength="80"></label>
+          <label class="full">Academic status *
+            <select name="academic_status" required>
+              <option value="">Choose an option</option>
+              <option>Professor</option><option>PhD Student</option>
+              <option>Master Student</option><option>Engineer</option><option>Other</option>
+            </select>
+          </label>
+        </div>
+        <label class="consent"><input type="checkbox" required> I agree that the ARCS'26 organizing team may use these details to manage my registration and participation.</label>
+        <button id="submit-button" type="submit">Submit registration</button>
+        <p class="small muted">Please submit only once. Your registration details are handled by the organizing team.</p>
+      </form>
+      <div id="message" class="message" role="status" aria-live="polite"></div>
+      <div id="ticket" class="ticket" hidden>
+        <div class="success">Registration received</div>
+        <p>Your registration reference:</p>
+        <strong id="registration-id"></strong>
+        <div id="qrcode" aria-label="Your personal QR code"></div>
+        <p class="small muted">Keep this QR code. The organizing team will use it to record your attendance. This is not an email confirmation.</p>
+        <button type="button" class="secondary" onclick="window.print()">Print / Save ticket</button>
+      </div>
+    </section>
+  </main>
+  <footer>ARCS'26 · Organized by the ARCS'26 Organizing Committee</footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+  <script src="/app.js" defer></script>
+</body>
+</html>
